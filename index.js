@@ -14,7 +14,7 @@
    let primeiroNome = 'Lucas';
    let ultimoNome = 'Campos';
    
-   let interestRate = 0.3; // String numero
+   let interestRate = 0.3; // Numeral
    interestRate = 1;
    console.log (interestRate);
    
@@ -90,6 +90,13 @@ let multa = bomCarro || boaRoda;
 
 console.log (multa);
 
+        // Caso tenha a corUsuario, ela sera usada, caso não, será a corPadrao.
+        let corUsuario = undefined;
+        let corPadrao = 'blue';
+        let corAgora = corUsuario || corPadrao;
+
+        console.log (corAgora);
+
 // ! se o operador for true, o "!" transformara ele em false
 
 let boaAtividade = true;
@@ -97,3 +104,81 @@ let boaNota = !boaAtividade;
 
 console.log (boaNota);
 
+//Inverter a para blue, e b para red
+let a = 'red'
+let b = 'blue'
+
+    //Resolução
+    let c = a;
+    a = b;
+    b = c;
+
+console.log(a);
+console.log(b);
+
+                // IF-ELSE
+
+// Se o horário estiver entre 6 as 12: Bom dia!
+// Se o horario estiver entre 12 e 18: Boa tarde!
+// Se não: Boa noite!
+
+
+let hora = 10;
+
+if (hora >= 6 && hora < 12) 
+    console.log ('Bom dia!');
+
+else if (hora >= 12 && hora < 18) 
+    console.log ('Boa tarde!');
+
+else 
+    console.log ('Boa noite!');
+
+
+
+            // SWITCH-CASE
+// Se o usuario for convidado: Usuario convidado
+// Se o usuario for moderador: Usuario moderador
+// Se não: Usuario desconhecido
+
+
+let posicao = 'convidado';
+
+switch (posicao) {
+    case 'convidado':
+        console.log ('Usuario convidado');
+        break;
+
+    case 'moderador':
+        console.log ('Usuario moderador');
+        break;
+        
+    default:
+        console.log ('Usuario desconhecido');
+}
+
+        // Mesmo exercicio em IF-ELSE
+        if (posicao === 'convidado') console.log('Convidado');
+        else if (posicao === 'moderador') console.log ('Moderador');
+        else console.log ('Usuario desconhecido')
+
+
+                // FOR LOOP
+
+for (let i = 0; i < 5; i++) { //Setando a variavel i para 0, enquanto a variavel i for menor que 5, acrescentar +1
+    console.log ('Ola mundo'); // O que acontece enquanto a variavel i for <5
+}
+
+for (let i = 0; i <=5; i++) {
+    if (i % 2 !== 0) // Se o que sobrou da divisão de i por 2, não for 0 (quer dizer que o numero é primo) irá mostrar a mensagem a seguir:
+     console.log ('Ola');
+}
+
+                // WHILE LOOP
+
+let i = 0;
+while (i <= 5) { // Enquanto i for menor e igual a 5
+    if (i % 2 !== 0) // E se for numero primo
+    console.log ('Olá denovo!'); // Mostrar mensagem
+    i++; // Acrescentar de volta no while, subindo novamente pro loop
+}
