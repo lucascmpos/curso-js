@@ -470,3 +470,188 @@ function Post(titulo, corpo, autor) {
     this.estaON = false;
 }
 
+
+// Adicionando novos elementos no começo, meio e fim de um Array
+
+const numbers = [3, 4]; // Lembrando que array também é um objeto.
+
+// Adicionando no fim
+
+numbers.push(5,6);
+//console.log(numbers);
+
+// Adicionando no começo
+
+numbers.unshift(1, 2);
+//console.log(numbers);
+
+// Adicionando no meio
+
+numbers.splice(2, 0, 'a', 'b' );
+//console.log(numbers);
+
+// Achando elementos em uma array
+
+const numero = [1, 2, 3, 4];
+
+console.log(numero.indexOf('1')); // Verificando se uma string existe no array
+
+console.log(numero.lastIndexOf(1)); // Mostra a posição mais elevada onde o numero se encontra, contando apartir de 0.
+
+console.log(numero.includes(1)); // Verificando se o numero existe no array
+
+// Achando elementos por referencia
+
+const cursos = [
+    {id: 1, nome: 'a'},
+    {id: 2, nome: 'b'},
+];
+
+// Utilizando do método .find, que é necessario criar uma variavel para amostra
+let curso = cursos.find(curso => curso.nome === 'a');
+console.log(curso);
+
+
+
+
+
+// Removendo elementos de uma array
+
+const elementos = [1, 2, 3, 4];
+
+// No fim da array
+const ult = elementos.pop();
+//console.log(elementos);
+
+
+// No começo da array
+const pri = elementos.shift();
+//console.log(elementos);
+
+// No meio da array
+elementos.splice(2, 1);
+//console.log(elementos);
+
+
+
+
+
+// Deixando uma array vazia
+let vazio = [1, 2, 3, 4];
+let outro = vazio;
+
+// Solução 1
+vazio = [];   // menos indicada
+
+// Solução 2
+vazio.lenght = 0;  // mais indicada
+
+// Solução 3
+vazio.splice(0, vazio.lenght);
+
+// Solução 4
+while (vazio.lenght > 0)
+vazio.pop();  // não recomendado
+
+
+
+
+// Combinar e particionar arrays
+
+const primeira = [1, 2, 3, 4];
+const segunda = [4, 5, 6];
+
+const combinadas = [...primeira, ...segunda];
+
+const particionar = combinadas.slice(2);
+
+console.log(combinadas);
+console.log(particionar);
+
+
+
+// Unir o conteudo da array
+
+const s = [1, 2, 3];
+const unir = s.join (',');  // Unindo os numeros com uma virgula entre eles
+console.log(unir);
+
+
+// Organizar arrays
+
+const d = [1, 3, 2];     // Organizar numeros
+d.sort();
+console.log(d);
+
+
+const ling = [           // Organizar objetos string
+    {id: 1, nome: 'Node.js'},
+    {id: 2, nome: 'JavaScript'},
+];
+
+ling.sort(function(a, b){
+
+    const nomeA = a.nome.toLowerCase();   // Eliminar o padrao ASCII de numeração de letras.
+    const nomeB = b.nome.toLowerCase();
+
+
+    if (nomeA < nomeB) return -1;   // Se B for maior que A, retornar -1
+    if (nomeA > nomeB) return 1;    // Se A maior que B, retornar 1
+    return 0;                         // Se igual, retornar 0
+});
+
+
+
+
+
+// Filtrando array
+
+const fil = [1, -1, 2, 3];
+
+const filtrado = fil.filter(valor => valor >= 0);   // Mostrar os valores maior e igual a 0
+
+console.log(filtrado);
+
+
+// Mapeando array do exercicio acima
+
+const items = filtrado.map(valor => '<li>' + valor + '</li>');   // Adicionando <li> no começo do valor e </li> no final do valor
+console.log(items);
+
+
+
+
+
+
+// Reduzindo uma array
+
+const w = [1, -1, 2, 3];
+
+const sum = w.reduce((acumulador, valorAtual) => {
+    return acumulador, valorAtual;
+});
+
+console.log(sum);
+
+
+
+// Declarando uma função
+
+function andar() {
+    console.log('andar');
+}
+
+// Expressão de função - Não pode ser chamada antes de ser declarada
+let correr = function() {;
+    console.log('correr');
+};
+let mover = correr; 
+correr();  // Chamando a função
+mover(); // Chamando a variavel mover que é igual a função correr
+
+
+
+
+
+//
+
